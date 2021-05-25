@@ -52,13 +52,10 @@ def get_following_ids(influencer_id):
     params = get_params()
     json_response = connect_to_endpoint(url, headers, params)
     output_dictionary = {}
-    #print(json_response['data'])
     for x in json_response['data']:
         output_dictionary[x.get('id')] = x.get('username')
     if 'meta' in json_response:
         while 'next_token' in json_response['meta']:
-            #print("There is a next token!")
-            #print(json_response['meta'].get('next_token'))
             params['pagination_token'] = json_response['meta'].get('next_token')
             json_response = connect_to_endpoint(url, headers, params)
             for x in json_response['data']:
@@ -70,7 +67,6 @@ def get_influencer_id(influencer):
     url = create_influencer_url(influencer)
     headers = create_headers(bearer_token)
     json_response = connect_to_endpoint(url, headers, '')
-    # print(json.dumps(json_response, indent=4, sort_keys=True))
     return json_response['data'][0].get('id')
 
 
@@ -81,8 +77,6 @@ def get_follower_info(user_id, follower_operation, number):
     json_response = connect_to_endpoint(url, headers, '')
     followers_count = json_response['data'][0].get("public_metrics").get("followers_count")
     if follower_operation == "follower_count_lt":
-        # print(json_response)
-        # print("Followers Count is " + str(followers_count))
         return followers_count < number
     else:
         return followers_count > number
@@ -91,10 +85,12 @@ def get_follower_info(user_id, follower_operation, number):
 # Python3 Influencer.py <Search Criteria> <Number> <Twitter Handles>
 # Search Critera (filter)
 #    Options - follower_count_lt x - Follower Count less than x
-#            - follow_count_gt x - Follower Count greater than x
+#            - follower_count_gt x - Follower Count greater than x
 # Twitter Handles
 #       This script can accept any number of accounts to compare to buy there is an api limit
 #       of 15,000 combined follows between them
+# If you leave out a second person this script can analyze a single account to check follows greater or
+# less than a certain follower count.
 def main_function():
     x = 0
     influencer_list = []

@@ -58,6 +58,19 @@ Example Output
 
 These are the two mutual follows that met this criteria.
 
+You can also use this script (though a bit inefficiently) to find analyze a single person's follow list.
+Keep in mind that there is the limit of 900 on the twitter API so this can't be used on big accounts
+In the below example I am checking my own account for people with follower count less than 100
+
+Input
+```
+python3 Influencer.py follower_count_lt 100 PunOkoBuffett
+```
+Output
+```
+['@0xdazai', '@0xBasedVoid', '@OscarKevinXR']
+```
+
 ## Twitter API Limitations
 The twitter API standard plan has the following limitations for a 15 minute timeframe:
 15 requests to get the follow count of any given twitter users (1000 follows = 1 request)
@@ -83,3 +96,17 @@ I have some ideas of different filter types but can work based on user requests
 ## Contact
 Please contact me on twitter with any questions or use Github features
 @PunOkoBuffett
+
+## Extra
+For the example I laid out here are who path + cobie follow with less than 10,000 followers.
+```
+Python3 Influencer.py follower_count_lt 10000 CryptoCobain Cryptopathic
+```
+
+Output
+```
+['@eliquinox', '@pepenaut', '@DSNR_1', '@piggydeveloper', '@db125db', '@0x4C756B65', '@MozaInfinite', '@UpsUpsAndDowns', '@heat', '@zoidbergbtc', '@Shillexed', '@philipplgh', '@CoinNomad'
+, '@BTC_kahir', '@MTX_dd', '@BryptoBelz', '@CryptoHunterGon', '@GhxstNFT', '@T3naciousC', '@kenzboard', '@rdtajj', '@MEKhoko', '@_jasonss', '@Techemist', '@0xElm0', '@AltMinerD', '@setani
+mals', '@arbedout', '@tommyXBT', '@comfytrades', '@getderb', '@fishxbt', '@The_Endoryan', '@0xNietzsche', '@lidcoin', '@Trekgirl7of9', '@CryptoGabba', '@BlockchainDenim', '@Hardwood_', '@
+Seranged', '@VeyBtc']
+```

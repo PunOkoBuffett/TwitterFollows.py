@@ -1,7 +1,7 @@
 # TwitterFollows.py
-A script to find mutual follows meeting certain criteria on twitter.
-The purpose of this script is to compare two or more twitter profiles and see
-if they have any mutual follows in common. Additionally you can put a criteria
+A script to find mutual follows meeting certain criteria on Twitter.
+The purpose of this script is to compare two or more Twitter profiles and see
+if they have any mutual follows in common. Additionally, you can put a criteria
 for the mutual follower's followers count. So you can find as an example
 all people that both CryptoCobain and Path follow that have less than 10,000 followers
 These accounts may be under the radar traders, what you do with the information
@@ -12,21 +12,25 @@ Python 3
 
 Python Requests Library
 
-Access to the twitter API  library
+Access to the Twitter API  library
 
 You view the [SETUP.md](./SETUP.md) file for how to set the project up.
 
 Once you have set the project up the very thing you have to do to it is run the
-following command in a terminal window or set it up as an enviornment variable in the 
+following command in a terminal window or set it up as an environment variable in the 
 IDE you are using
 
 `export 'BEARER_TOKEN'=<bearer token value>`
 
-This will allow you access the twitter api using your key.
+If you are using windows or windows shell the following command will work as well
+
+`set BEARER_TOKEN=<bearer token value>`
+
+This will allow you to access the Twitter api using your key.
 
 With all of this set up you can run the program with the following commands
 
-Python3 Influencer.py <filter> <number> <name1> <name1>
+`Python3 Influencer.py <filter> <number> <name1> <name1>`
 
 The arguments for the program are as follows:
 
@@ -38,7 +42,7 @@ Filter - What to filter the mutual followers by
 Number - Input for the filter criteria (follower count greater than or less if you are filtering on follower count)
 
 <name1> - Twitter handle of the first person you want to compare against followed by
-any number of other twitter handles.
+any number of other twitter handles
 
 Once ran the program will go through all API calls and output a list of twitter handles
 that met the criteria.
@@ -72,15 +76,15 @@ Output
 ```
 
 ## Twitter API Limitations
-The twitter API standard plan has the following limitations for a 15 minute timeframe:
-15 requests to get the follow count of any given twitter users (1000 follows = 1 request)
-900 requests to query the public data of any twitter account (this call is made once per 
+The Twitter API standard plan has the following limitations for a 15 minute timeframe:
+15 requests to get the follow count of any given Twitter users (1000 follows = 1 request)
+900 requests to query the public data of any Twitter account (this call is made once per 
 user input and once per each mutual follow).
 
 This means you cannot compare any people with a total combined follow count of
 15,000 or greater as of now. There would also be an issue if there are many mutual follows
 (> 900) and the script will fail. Workaround to this is possible through storing
-local results and having the user re run the script in 15 more minutes (may work on this
+local results and having the user rerun the script in 15 more minutes (may work on this
 in the future)
 
 ## FAQS
@@ -98,7 +102,8 @@ Please contact me on twitter with any questions or use Github features
 @PunOkoBuffett
 
 ## Extra
-For the example I laid out here are who path + cobie follow with less than 10,000 followers.
+This is the result for the example I said earlier -  who path + cobie follow with 
+less than 10,000 followers, this is the resu
 ```
 Python3 Influencer.py follower_count_lt 10000 CryptoCobain Cryptopathic
 ```

@@ -3,9 +3,9 @@ A script to find mutual follows meeting certain criteria on Twitter.
 The purpose of this script is to compare two or more Twitter profiles and see
 if they have any mutual follows in common. Additionally, you can put a criteria
 for the mutual follower's followers count. So you can find as an example
-all people that both Cobie and Path follow that have less than 10,000 followers
+all people that both Cobie and Path follow that have less than 10,000 followers.
 These accounts may be under the radar traders, what you do with the information
-is up to you.
+is up to you #NotFinancialAdvice 
 
 You can use also this script to analyze a single twitter user's 
 following list and see if anyone they follow has a low follower count (in a more limited capacity

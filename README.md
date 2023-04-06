@@ -3,7 +3,7 @@ A script to find mutual follows meeting certain criteria on Twitter.
 The purpose of this script is to compare two or more Twitter profiles and see
 if they have any mutual follows in common. Additionally, you can put a criteria
 for the mutual follower's followers count. So you can find as an example
-all people that both CryptoCobain and Path follow that have less than 10,000 followers
+all people that both Cobie and Path follow that have less than 10,000 followers
 These accounts may be under the radar traders, what you do with the information
 is up to you.
 
@@ -48,6 +48,8 @@ Once ran the program will go through all API calls and output a list of twitter 
 that met the criteria.
 
 Example Input
+Some of these inputs/outputs will change over time/be invalid as people gain and lose followers
+on twitter or deactivate accounts.
 ```
 Python3 Influencer.py follower_count_lt 350 EtheriaChan PunOkoBuffett
 ```
@@ -64,15 +66,17 @@ These are the two mutual follows that met this criteria.
 
 You can also use this script (though a bit inefficiently) to find analyze a single person's follow list.
 Keep in mind that there is the limit of 900 on the twitter API so this can't be used on big accounts
-In the below example I am checking my own account for people with follower count less than 100
+In the below example I am checking my own account for people with follower count less than 100. When diffing
+two people the list of common followers to analyze will be much smaller "bypassing" this free tier restriction
+Though you may still 429 errors for too many requests and have to wait for the cooldown to reset (15 minutes).
 
 Input
 ```
-python3 Influencer.py follower_count_lt 100 PunOkoBuffett
+python3 Influencer.py follower_count_lt 200 PunOkoBuffett
 ```
 Output
 ```
-['@0xdazai', '@0xBasedVoid', '@OscarKevinXR']
+['@JamesBr66723091', '@OscoXR']
 ```
 
 ## Twitter API Limitations
@@ -89,6 +93,12 @@ in the future)
 
 ## FAQS
 
+## Use Case
+Many accounts follow smaller accounts that are not in the public eyes of twitter as much and may have 
+"hidden" alpha. If a person or project is a mutual follower of many big accounts that could be a sign
+that the account being followed is important or a new project going to launch. Finding
+mutual followed is also useful though you may need to use the paid twitter API access to fully utilize this tool.
+
 ## Future Development
 
 Feel free to request features using Github Issues or raise issues 
@@ -102,8 +112,9 @@ Please contact me on twitter with any questions or use Github features
 @PunOkoBuffett
 
 ## Extra
-This is the result for the example I said earlier -  who path + cobie follow with 
-less than 10,000 followers, this is the resu
+This is the result for the example I said earlier -  who cobie and path follow with 
+less than 10,000 followers, this is the result (as of May 2021). As of April 2023 cobie's account is locked and
+the get public followers call will fail. I also tried this with degen spartan and got rate limited with the free tier.
 ```
 Python3 Influencer.py follower_count_lt 10000 CryptoCobain Cryptopathic
 ```

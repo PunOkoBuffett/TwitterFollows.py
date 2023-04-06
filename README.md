@@ -7,6 +7,10 @@ all people that both Cobie and Path follow that have less than 10,000 followers
 These accounts may be under the radar traders, what you do with the information
 is up to you.
 
+You can use also this script in a limit capacity to analyze a single twitter users 
+following base and see if anyone they follow have a lower follower count (in a more limited capacity
+due to twitter api limits).
+
 To use this script you need the following installed or set up:
 Python 3
 
